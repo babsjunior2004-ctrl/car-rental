@@ -358,7 +358,7 @@ const Header = () => {
                       {item.onClick ? (
                         <button
                           onClick={() => {
-                            item.onClick && item.onClick();
+                            item.onClick?.();
                             setIsOpen(false);
                           }}
                           className="w-full text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium py-2"

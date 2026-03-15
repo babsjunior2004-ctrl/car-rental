@@ -13,6 +13,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Dashboard from "./pages/Dashboard";
 import Reservations from "./pages/Reservations";
 import Profile from "./pages/Profile";
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -86,6 +87,7 @@ function App() {
                   </MainLayout>
                 }
               />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </FavoritesProvider>
         </ReservationProvider>

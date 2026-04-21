@@ -5,7 +5,7 @@ import { cars } from "../data/cars";
 import type { Car } from "../data/cars";
 import CarCard from "../components/carCard";
 import ReservationModal from "../components/ReservationModal";
-// Footer is included by MainLayout, so import not needed
+// Le Footer est inclus dans MainLayout, donc pas besoin d'import
 
 // données des particules calculées une seule fois au chargement du module
 const heroParticlesData = Array.from({ length: 50 }, (_, i) => ({

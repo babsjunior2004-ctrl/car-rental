@@ -94,7 +94,7 @@ export const ReservationProvider: React.FC<ReservationProviderProps> = ({
     const history = getReservationHistory();
     const allReservations = [...active, ...history];
 
-    // Monthly reservations
+    // Réservations mensuelles
     const monthlyMap = new Map<string, number>();
     allReservations.forEach((res) => {
       const date = new Date(res.startDate);
@@ -105,7 +105,7 @@ export const ReservationProvider: React.FC<ReservationProviderProps> = ({
       .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([month, count]) => ({ month, count }));
 
-    // Top cars (brand + model)
+    // Meilleurs véhicules (marque + modèle)
     const carMap = new Map<string, number>();
     allReservations.forEach((res) => {
       const key = `${res.car.brand} ${res.car.name}`;
@@ -120,7 +120,7 @@ export const ReservationProvider: React.FC<ReservationProviderProps> = ({
         model: brand.split(" ")[1] || "",
       }));
 
-    // Availability (mock: total cars - active bookings)
+    // Disponibilité (simulation : total voitures - réservations actives)
     const totalCars = cars.length;
     const booked = active.length;
     const available = totalCars - booked;

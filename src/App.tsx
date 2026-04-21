@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ReservationProvider } from "./contexts/ReservationContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -14,81 +14,160 @@ import Dashboard from "./pages/Dashboard";
 import Reservations from "./pages/Reservations";
 import Profile from "./pages/Profile";
 import { Navigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0, y: 20 },
+  in: { opacity: 1, y: 0 },
+  out: { opacity: 0, y: -20 },
+};
+
+const pageTransition = {
+  duration: 0.4,
+};
 
 function App() {
+  const location = useLocation();
+
   return (
     <ThemeProvider>
       <AuthProvider>
         <ReservationProvider>
           <FavoritesProvider>
             <ScrollToTop />
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <MainLayout>
-                    <Landing />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/cars"
-                element={
-                  <MainLayout>
-                    <Cars />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  <MainLayout>
-                    <Login />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/register"
-                element={
-                  <MainLayout>
-                    <Register />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/reset-password"
-                element={
-                  <MainLayout>
-                    <ResetPassword />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/dashboard"
-                element={
-                  <MainLayout>
-                    <Dashboard />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/reservations"
-                element={
-                  <MainLayout>
-                    <Reservations />
-                  </MainLayout>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <MainLayout>
-                    <Profile />
-                  </MainLayout>
-                }
-              />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route
+                  path="/"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Landing />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/cars"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Cars />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/login"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Login />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/register"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Register />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/reset-password"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <ResetPassword />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Dashboard />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/reservations"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Reservations />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/profile"
+                  element={
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={pageTransition}
+                    >
+                      <MainLayout>
+                        <Profile />
+                      </MainLayout>
+                    </motion.div>
+                  }
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </AnimatePresence>
           </FavoritesProvider>
         </ReservationProvider>
       </AuthProvider>

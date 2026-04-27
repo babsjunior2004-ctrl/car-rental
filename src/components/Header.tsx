@@ -82,9 +82,12 @@ const Header = () => {
         >
           <Link
             to="/"
-            className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300"
+            className="text-3xl font-display font-extrabold tracking-tight"
           >
-            DriveNow
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-500">
+              Drive
+            </span>
+            <span className="text-gray-800 dark:text-white">Now</span>
           </Link>
         </motion.div>
 

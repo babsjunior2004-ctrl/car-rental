@@ -39,7 +39,7 @@ const Landing = () => {
 
   return (
     <>
-      {/* Hero Section Ultra Moderne */}
+      {/* Hero Section Moderne */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Fond avec image et particules animées */}
         <div className="absolute inset-0">
@@ -76,7 +76,7 @@ const Landing = () => {
             className="mb-8"
           >
             <motion.h1
-              className="text-6xl md:text-8xl font-heading font-black text-white mb-6"
+              className="text-6xl md:text-8xl font-display font-black text-white mb-6 tracking-tight"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -96,7 +96,7 @@ const Landing = () => {
               DriveNow
             </motion.h1>
             <motion.p
-              className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-sans"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -193,7 +193,7 @@ const Landing = () => {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="text-5xl md:text-6xl font-heading font-black text-gray-900 dark:text-white mb-6"
+              className="text-5xl md:text-6xl font-display font-black text-gray-900 dark:text-white mb-6 tracking-tight"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -213,7 +213,7 @@ const Landing = () => {
               Nos Véhicules d'Exception
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-sans"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -319,10 +319,10 @@ const Landing = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-heading font-black text-white mb-6">
+            <h2 className="text-5xl md:text-6xl font-display font-black text-white mb-6 tracking-tight">
               Services d'Excellence
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-sans">
               Une expérience de location incomparable avec des services premium
               adaptés à vos besoins.
             </p>

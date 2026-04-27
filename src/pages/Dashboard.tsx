@@ -300,7 +300,7 @@ const Dashboard = () => {
               {stats.availability.available}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 font-medium">
-              Voitures disponibles
+               Type de Voitures disponibles
             </p>
           </motion.div>
         </motion.div>
